@@ -10,7 +10,6 @@ use Phalcon\Mvc\Model\BehaviorInterface;
 use Phalcon\Mvc\Model\Exception;
 use Phalcon\Mvc\Model\ResultsetInterface;
 use Phalcon\Mvc\ModelInterface;
-use Phalcon\Traits\EventManagerAwareTrait;
 
 class NestedSet extends Behavior implements BehaviorInterface
 {
@@ -35,10 +34,10 @@ class NestedSet extends Behavior implements BehaviorInterface
 	 */
 	private $owner;
 
-	private $hasManyRoots = false;
+	private $hasManyRoots = true;
 	private $rootAttribute = 'root';
-	private $leftAttribute = 'lft';
-	private $rightAttribute = 'rgt';
+	private $leftAttribute = '_lft';
+	private $rightAttribute = '_rgt';
 	private $levelAttribute = 'level';
 	private $primaryKey = 'id';
 	private $ignoreEvent = false;
@@ -345,7 +344,7 @@ class NestedSet extends Behavior implements BehaviorInterface
 
 		return $query->execute()->getFirst();
 	}
-	
+
 	/**
 	 * Gets DB handler.
 	 * @param ModelInterface $model
