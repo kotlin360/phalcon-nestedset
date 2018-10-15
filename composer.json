@@ -1,0 +1,23 @@
+{
+	"name": "kotlin360/phalcon-nestedset",
+	"description": "phalcon-nestedset",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Kotlin360\\Nestedset\\": "src"
+		}
+	},
+	"require": {
+		"php": ">=7.1",
+		"ext-phalcon": "^3.4"
+	},
+	"keywords": [
+		"phalcon"
+	],
+	"authors": [
+		{
+			"name": "phalcon",
+			"homepage": "https://phalconphp.com/"
+		}
+	]
+}
